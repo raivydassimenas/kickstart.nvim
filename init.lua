@@ -712,6 +712,12 @@ require('lazy').setup({
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
+        'isort',
+        'black',
+        'prettierd',
+        'prettier',
+        'google-java-format',
+        'rustfmt',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -769,6 +775,8 @@ require('lazy').setup({
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
         javascript = { 'prettierd', 'prettier', stop_after_first = true },
+        typescript = { 'prettierd', 'prettier', stop_after_first = true },
+        rust = { 'rustfmt' },
         java = { 'google-java-format' },
       },
     },
